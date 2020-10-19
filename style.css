@@ -1,5 +1,5 @@
 .food{
-    border: 1px solid black;
+    border: 1px solid #f1f1f1;
     margin-top: 0px;
     width: 75%;
     height: 1000px;
@@ -8,7 +8,7 @@
 }
 
 .food>p{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #f1f1f1
     
 }
 
@@ -16,13 +16,13 @@
 .card{
     width:24,9%;
     height: 1000px;
-    border-right: 1px solid black;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-right: 1px solid #f1f1f1;
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
 }
 .card > p {
     text-align: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #f1f1f1;
 }
 .flex-container {
     display: flex;
@@ -48,7 +48,7 @@
   }
 
   #button1{
-      margin-top:60px;
+      margin-top:10px;
       margin-left: 150px;
   }
   .carditem{
@@ -94,5 +94,11 @@
     margin-top:10px;
     color: red;
     background-color: white;
+  }
+
+  .plus{
+    float:left;
+    color: green;
+    border: 1px solid green;
   }
  
