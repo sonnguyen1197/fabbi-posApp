@@ -1,3 +1,6 @@
+body {
+    margin: 0px;
+}
 .container {
     width: 100%;
     display: flex;
@@ -14,12 +17,15 @@
     border-color: #f5f6f8;
 }
 .title {
+    width: 100%;
+    height: 8vh;
     background-color: white;
     border-width: 1px;
     border-style: solid;
     border-color: #f5f6f8;
 }
 .list {
+    height: 94%;
     display: flex;
     flex-direction: column;
     background-color:#f5f6f8;
@@ -43,14 +49,30 @@
     border-style: solid;
     border-color: #f5f6f8;
 }
+.row3 {
+    display: flex;
+    flex-flow: row wrap;
+    background-color:#f5f6f8;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #f5f6f8;
+}
 .item {
+    width: 32%;
     border-width: 8px;
     border-style: solid;
     border-color: #f5f6f8;
 }
+#img {
+    width: 100%;
+}
+#icon {
+    width: 2%;
+}
 /* right */
 .right {
     width: 30%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     background-color:#fff;
@@ -58,19 +80,126 @@
     border-style: solid;
     border-color: #f5f6f8;
 }
+/* tao khung cart */
 .title-right {
+    height: 8vh;
+    width: 100%;
     border-width: 1px;
     border-style: solid;
     border-color: #f5f6f8;
 }
 .payment {
+    height: 94%;
+    width: 100%;
     border-width: 2px;
     border-style: solid;
     border-color: #f5f6f8;
     display: flex;
     flex-direction: column;
 }
-/* payment */
-.list2{
-    height: 55%;
+/* Viet tieu de */
+.title2 {
+    text-align: center;
+}
+/* tao khung thanh toan */
+.list2 {
+    height: 35%;
+}
+.total {
+    height: 6%;
+    background-color: #eaf5fa;
+    border-width: 12px;
+    border-style: solid;
+    border-color: white;
+    display: flex;
+    flex-flow: row wrap;
+}
+.checkout {
+    height: 59%;
+}
+/* tao khung thong tin so luong, gia do an duoc dat */
+.itemright{
+    height: 33%;
+    display: flex;
+    flex-flow: row wrap;
+}
+#img2 {
+    width: 20%;
+    border-width: 12px;
+    border-style: solid;
+    border-color: white;
+}
+#number {
+    width: 45%;
+    border-width: 12px;
+    border-style: solid;
+    border-color: white;
+}
+#priceright {
+    width: 20%;
+    border-width: 12px;
+    border-style: solid;
+    border-color: white;
+}
+/* chinh kich thuoc element So luong va ten san pham */
+#namefood {
+    height: 50%;
+}
+#numberfood {
+    height: 50%;
+}
+/* chinh kich thuoc icon */
+#icon2 {
+    width: 2%;
+}
+/* gian cach cac doi tuong trong the co id="itemright" */
+/* chinh sua vi tri, cai dat mau nen cac phan tu trong khoi total */
+#text {
+    width: 33%;
+    height: 100%;
+}
+#pricetotal {
+    width: 67%;
+    height: 100%;
+    text-align: right;
+}
+/* CSS cho class="checkout" */
+.checkout {
+    position: relative;
+    border-width: 12px;
+    border-style: solid;
+    border-color: white;
+}
+.child {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    border: 3px solid white;
+    height: 30%;
+}
+.text3 {
+    background-color: #018d5b;
+    border-color: white;
+    border-style: solid;
+    height: 43%;
+    border: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+#hold {
+    width: 48%;
+    height: 100%;
+    border-width: 0px;
+}
+#cancel {
+    width: 48%;
+    position: absolute;
+    right: 0%;
+    height: 100%;
+    border-width: 0px;
+}
+.button1 {
+    position: relative;
+    height: 43%;
 }
