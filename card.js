@@ -1,4 +1,3 @@
-
 var check = false;
 var giohang = 'dandanhsachItemGiohang';
 function myfunction(itemGioHang) {
@@ -14,10 +13,11 @@ function myfunction(itemGioHang) {
 			danhsach[i].soluong++;
 			var soluong = danhsach[i].soluong;
 			var priceTotal = sanPham.price * soluong;
-			alert(priceTotal);
+			
 			$(document).ready(function () {
 				$('#' + itemGioHang).val(soluong);
-				$('#price' + itemGioHang).html('<span class="price" id = "price' + itemGioHang + '">' + priceTotal + '$</span>')
+				$('#price' + itemGioHang).html('<span class="price" id = "price' + itemGioHang + '">' + priceTotal + '$</span>');
+				
 			}
 			)
 			coTonTai = true;
@@ -42,15 +42,19 @@ function myfunction(itemGioHang) {
 				'<input class= "numberItem" id = "' + foods[i].id + '" type="text" value="1" >' +
 				'<button class = "buttonPlus">+</button>' +
 				'<span class="price" id = "price' + foods[i].id + '">' + foods[i].price + '$</span>' +
-				'</div>')
+				'</div>');
 			}
+			
 		}
 		checkout();
+		
 		
 	}
 
 
 	saveLocal(danhsach);
+	var total = totalPrice();
+	$('#pricetotal').html('<span class = "pricetotal">'+total+'$</span>');
 
 
 
@@ -62,27 +66,31 @@ function giohangcard() {
 	if (danhsachgiohang != null) {
 		var html = htmltong(danhsachgiohang);
 		var node = document.getElementById('gio-hang');
-	
+		
 		node.innerHTML = html;
 	}
 
 }
 
-function totalPrice(itemGioHang) {
-
-	var sanPham = laySanPhamTheoId(itemGioHang.idSanPham);
-	totalPrice = sanPham.price * sanPham.soluong;
+function totalPrice() {
+	var totalPrice = 0;
+	var sanPham = layDanhSachItemGioHang();
+	for(var i =0; i<sanPham.length; i++){
+		totalPrice += sanPham[i].price * sanPham[i].soluong;
+	}
+	
 
 	return totalPrice;
 
 
 }
 function checkout() {
+	var total = totalPrice();
 	var danhsachgiohang = laySanPhamTuLocalStorge();
 	if (check || danhsachgiohang != null) {
 		var html = '<div class ="total">' +
 			'<span id = "itemtotal">TotalItems</span>' +
-			'<span id = "pricetotal">200</span>' +
+			'<span id = "pricetotal">'+total+'$</span>' +
 			'</div>' +
 
 			'<button class = "col-12 checkout">Check Out</button>' +
@@ -109,6 +117,11 @@ function TaoDoiTuongiTemGioHang(idSanPham, soluong) {
 	var itemGioHang = new Object();
 	itemGioHang.idSanPham = idSanPham;
 	itemGioHang.soluong = soluong;
+	for(var i = 0; i<foods.length; i++){
+		if(idSanPham == foods[i].id){
+			itemGioHang.price = foods[i].price;
+		}
+	}
 	return itemGioHang;
 }
 
@@ -144,22 +157,7 @@ function chuyensangHTML(itemGioHang) {
 
 
 
-function renderCard(id) {
-	var SanPham = laySanPhamTheoId(id);
-	$("#gio-hang").append('<div class ="carditem" >' +
-		'<img class = "foodbought" src="' + SanPham.img + '" alt="">' +
-		'<p class = "pcheck">' +
-		'<div class = "check"> + </div>' +
-		'<p class= "nameItem">' + SanPham.name + '</p>' +
-		'</p>' +
-		'<br />' +
-		'<button onclick="MinusItemFunction(' + SanPham.id + ')" class = "buttonMinus">-</button>' +
-		'<input class= "numberItem" type="text" id = "SanPham.id" value="' + SanPham.soluong + '" >' +
-		'<button class = "buttonPlus">+</button>' +
-		'<span class="price">' + SanPham.price + '</span>' +
-		'</div>');
 
-}
 function saveLocal(danhsach) {
 	var jsonDanhSach = JSON.stringify(danhsach);
 

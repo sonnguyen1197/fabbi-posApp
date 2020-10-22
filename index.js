@@ -53,7 +53,7 @@ var foods = [
         id: 8,
         name: 'Cake',
         img: 'anh/images (4).jpeg',
-        price: '100',
+        price: '1000',
      
         status: 'sdfsdf',
     },
